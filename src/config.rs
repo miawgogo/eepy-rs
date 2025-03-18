@@ -2,7 +2,7 @@
 struct Config {
    timeout: u16, // in minutes
    backend: Option<String>,
-   keys: Vec<Service>,
+   service: Vec<Service>,
 }
 
 
@@ -16,6 +16,6 @@ enum NetFamilies {
 #[derive(serde::Deserialize)]
 struct Service {
     name: String,
-    port: u16,
+    ports: Vec<u16>,
     families: Option<Vec<NetFamilies>> // Assuming all if its none
 }
